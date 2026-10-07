@@ -17,18 +17,7 @@ A browser-based voice customer support agent. Click **Start call**, speak, and A
 
 ## Architecture
 
-```
-Browser (React)                                     Server (Express)                       Gemini
- mic -> SpeechRecognition (STT) --text--> POST /api/chat/stream -------------> streamGenerateContent
-                                               |  tool loop (max 5 rounds)  <-- functionCall
-                                               |  runTool() reads/writes mock DB
-                                               |  functionResponse ---------> streamGenerateContent
- <---- sentence 1 ---- sentence 2 ---- (NDJSON stream, sent as soon as each sentence completes)
- each sentence -> POST /api/tts (Edge neural voice, MP3) -> queued audio player (browser voice if it fails)
- End call -> POST /api/summary ----------------> JSON summary (responseMimeType: application/json)
-```
-
-The API key never reaches the browser. In production the Express server also serves the built React app, so a single service is deployed.
+<img width="1346" height="933" alt="image" src="https://github.com/user-attachments/assets/3bcfad00-ae05-41c7-8b96-eb5545ed85c1" />
 
 ## Setup
 
@@ -94,6 +83,5 @@ Latency and barge-in. Replies already stream sentence by sentence into TTS, so n
 - Add monitoring: latency percentiles, tool error rates, resolution and escalation rates, and a human handoff path for angry or unresolved customers
 - Keep reviewing transcripts to catch policy drift
 
-## Approach note (for the email)
 
-I built a modular voice pipeline: browser speech recognition feeds a Gemini agent with function calling over a mock order database, and the reply is spoken back with browser TTS. Brand policy is enforced both in the system prompt and in the tool code, so the agent cannot promise refunds or cancellations outside policy. The UI shows the live agent state, order tracker and tool activity, and ends each call with a transcript and structured JSON summary.
+
