@@ -1,0 +1,11 @@
+{
+  "name": "aura-voice-agent",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "msedge-tts": "^2.0.9"
+  }
+}
