@@ -2,7 +2,7 @@
 
 A browser-based voice customer support agent. Click **Start call**, speak, and Aria answers out loud, looks up live order data through tool calls, enforces brand policy, and writes a transcript and structured summary when the call ends.
 
-<img width="1343" height="686" alt="image" src="https://github.com/user-attachments/assets/cdad5d06-4470-48c9-916a-9544876b3a79" />
+<img width="1318" height="680" alt="image" src="https://github.com/user-attachments/assets/1b2b5459-0298-4f71-897e-ad9352788550" />
 <img width="1332" height="670" alt="image" src="https://github.com/user-attachments/assets/d83f4e2a-b6ec-477c-91c7-36cdaf5abb45" />
 <img width="1340" height="688" alt="image" src="https://github.com/user-attachments/assets/2d1e693d-ff0b-40be-a6b9-3958408cb560" />
 
